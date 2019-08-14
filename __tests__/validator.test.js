@@ -5,14 +5,15 @@ const validator = require('../lib/validator.js');
 describe('validator module performs basic validation of', () => {
 
   // TODO: Make this series of tests less repetitive ... DRY it out
-
+  
+  let str = 'yes';
+  let num = 1;
+  let arr = ['a'];
+  let obj = {x:'y'};
+  let func = () => {};
+  let bool = false;
+  
   it('strings', () => {
-    let str = 'yes';
-    let num = 1;
-    let arr = ['a'];
-    let obj = {x:'y'};
-    let func = () => {};
-    let bool = false;
     expect(validator.isString(str)).toBeTruthy();
     expect(validator.isString(num)).toBeFalsy();
     expect(validator.isString(arr)).toBeFalsy();
